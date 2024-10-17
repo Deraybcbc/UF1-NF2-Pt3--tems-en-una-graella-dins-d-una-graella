@@ -1,0 +1,100 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 80%;
+    /*gap: 20px; /*SEPARAR LOS DOS BLOQUES*/
+}
+#graella{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "superior       superior        superior"
+    "menu           menu            tiquet"
+    "inferior       inferior        inferior";
+}
+
+.container{
+    grid-area: menu;
+   
+    border: 2px solid black;
+}
+
+#title{
+    grid-area: superior;
+    text-align: center;
+}
+
+#title2{
+    grid-area: inferior;
+    text-align: center;
+}
+
+.tiquet{
+    grid-area: tiquet;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    background-color: #d2d43a5e;
+    padding: 5px;
+    width: 190px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.item {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    /* border: 3px solid black; */
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6); /* SOMBRA */
+    transition: box-shadow 0.3s ease; /* TRANSICION PARA VER LA SOMBRA */
+}
+
+/* OCULTAR LABEL */
+.item label {
+    display: none; 
+}
+
+/* MOSTRAR EL LABEL CUANDO PASE POR ENCIMA EL RATON*/
+.item:hover label {
+    display: block;
+}
+
+.item:hover{
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6); /*SOMBRA MÁS GRANDE*/
+}
+
+/*PARA PONER LA PRIMERA LETRA UN POCO MÁS GRANDE QUE LAS ORTAS*/
+label::first-letter {
+    font-size: 21px;
+}
+
+
+.butons{
+    position: absolute;
+    bottom: 10px;
+    /* border: 3px solid yellow; */
+    width: 200px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 10px; 
+}
+
+.butons input[type="text"]{
+    width: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.butons input[type="button"]{
+    border-radius: 50%;
+    font-size: 16px;
+    background-color: white;
+}
